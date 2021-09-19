@@ -27,15 +27,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: installing Node
-        run: action/setup-node@v2-beta
+        run: actions/setup-node@v2-beta
         with:
            node-version: 12 
 
       # Runs a set of commands using the runners shell
       - name: Run surge
         run: npm install --global surge
-        name: deploying surge
-        run: surge ./ bo1_2020k.surge.sh --token {{ secrets.BO1_TOKEN }}
-      node - version :12 |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: deploying surge
+        run: surge ./ bo1_2020k.surge.sh --token ${{ secrets.BO1_TOKEN }}
