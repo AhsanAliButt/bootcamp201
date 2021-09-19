@@ -36,7 +36,6 @@ jobs:
         run: npm install --global surge
         name: deploying surge
         run: surge ./ bo1_2020k.surge.sh --token {{ secrets.BO1_TOKEN }}
-      node - version :12
-        run: |
+      node - version :12 |
           echo Add other actions to build,
           echo test, and deploy your project.
